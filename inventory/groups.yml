@@ -1,0 +1,7 @@
+---
+cisco_switch:
+  connection_options:
+    scrapli:
+      platform: cisco_iosxe
+      extras:
+        auth_strict_key: False

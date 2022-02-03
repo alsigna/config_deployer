@@ -1,0 +1,13 @@
+{% for intf,attr in host.interfaces.items() %}
+interface {{ intf }}
+ description {{ attr.desc }}
+ switchport access vlan {{ attr.vlan }}
+ switchport mode access
+ switchport nonegotiate
+ no logging event link-status
+ load-interval 30
+ no cdp enable
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+exit
+{% endfor %}
